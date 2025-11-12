@@ -1,0 +1,10 @@
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0
+pandas>=2.2.3
+python-multipart>=0.0.9
+huggingface_hub>=0.25.0
+torch>=2.7.0
+scikit-learn>=1.6.1
+# The sap-rpt-1-oss package is installed from the adjacent source tree during setup.
+pyzmq>=26.4.0
+

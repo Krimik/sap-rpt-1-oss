@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.coverage
+.pytest_cache/
+
+# Virtual environments and caches
+playground/backend/.venv/
+.cache/
+
+# Environment files
+.env
+
+# Node.js
+node_modules/
+playground/frontend/node_modules/
+playground/frontend/.vite/
+
+# Build artifacts
+dist/
+playground/frontend/dist/
+
+# External dependencies
+sap-rpt-1-oss/
+
+
