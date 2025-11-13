@@ -90,3 +90,38 @@ Each CSV in `example_datasets/` demonstrates a different SAP RPT scenario you ca
 - The repo is structured under `playground/backend` and `playground/frontend`. Edit React components or FastAPI routes there as needed.
 - Keep personal filesystem paths out of documentation and configuration. Use project-relative paths (e.g., `./example_datasets`) when sharing setup steps.
 
+## Barebones Python Usage
+
+If you want to call the model directly without the playground UI, the following script mirrors the official examples:
+
+```python
+from huggingface_hub import login
+from sap_rpt_oss import SAP_RPT_OSS_Classifier
+from sap_rpt_oss.scripts.start_embedding_server import start_embedding_server
+from sklearn.datasets import load_breast_cancer
+from sklearn.model_selection import train_test_split
+
+# Authenticate so the checkpoint can be fetched from Hugging Face
+login(token="hf_your_token_here")
+
+# Start the embedding server (required helper process)
+start_embedding_server(
+    sentence_embedding_model_name="sentence-transformers/all-MiniLM-L6-v2",
+    gpu_idx=None,  # set to an integer if you want GPU embeddings
+)
+
+# Prepare a tabular dataset (replace with your own data frame)
+X, y = load_breast_cancer(return_X_y=True)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=42)
+
+# Instantiate and run the classifier (swap to SAP_RPT_OSS_Regressor for regression)
+clf = SAP_RPT_OSS_Classifier(
+    checkpoint="2025-11-04_sap-rpt-one-oss.pt",
+    max_context_size=1024,
+    bagging=2,
+)
+clf.fit(X_train, y_train)
+predictions = clf.predict(X_test)
+print(predictions[:5])
+```
+
