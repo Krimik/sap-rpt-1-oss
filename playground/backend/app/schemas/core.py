@@ -38,12 +38,6 @@ class DatasetPreview(BaseModel):
     missing_values: dict[str, int]
 
 
-class ExampleDataset(BaseModel):
-    id: str
-    name: str
-    size_bytes: int
-
-
 class RunParameters(BaseModel):
     task: Literal["classification", "regression"]
     target_column: str = Field(..., description="Name of the target column in the dataset.")

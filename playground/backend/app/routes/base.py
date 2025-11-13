@@ -11,7 +11,7 @@ import tempfile
 import time
 from pathlib import Path
 from dataclasses import dataclass
-from typing import Annotated, Any, Callable, Dict, List, Optional
+from typing import Annotated, Any, Callable, Dict, Iterable, Optional, Sequence
 
 import numpy as np
 import pandas as pd
@@ -25,7 +25,6 @@ from playground.backend.app.dependencies import get_settings_dependency
 from playground.backend.app.jobs import JOB_REGISTRY, ProgressStreamer, run_inference
 from playground.backend.app.schemas.core import (
     DatasetPreview,
-    ExampleDataset,
     HFStatus,
     HealthResponse,
     ModelStatusSchema,
@@ -48,7 +47,6 @@ class ResultFileInfo:
 
 
 RESULT_FILES: Dict[str, ResultFileInfo] = {}
-ALLOWED_DATASET_EXTENSIONS = {".csv", ".parquet", ".json"}
 
 
 def _register_result_file(token: str, info: ResultFileInfo):
@@ -64,73 +62,8 @@ def _resolve_result_file(token: str) -> ResultFileInfo:
     return info
 
 
-def _examples_root(settings: Settings) -> Path:
-    return settings.examples_dir.resolve()
-
-
-def _collect_examples(settings: Settings) -> List[ExampleDataset]:
-    directory = _examples_root(settings)
-    if not directory.exists():
-        return []
-
-    examples: List[ExampleDataset] = []
-    for entry in directory.iterdir():
-        if entry.is_file() and entry.suffix.lower() in ALLOWED_DATASET_EXTENSIONS:
-            try:
-                stat = entry.stat()
-            except OSError:
-                continue
-            examples.append(ExampleDataset(id=entry.name, name=entry.stem, size_bytes=stat.st_size))
-
-    return sorted(examples, key=lambda item: item.name.lower())
-
-
-def _resolve_example_path(example_id: str, settings: Settings) -> Path:
-    directory = _examples_root(settings)
-    if not directory.exists():
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Examples directory not configured.")
-
-    candidate = (directory / example_id).resolve()
-    try:
-        candidate.relative_to(directory)
-    except ValueError:
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid example reference.")
-
-    if not candidate.exists() or not candidate.is_file() or candidate.suffix.lower() not in ALLOWED_DATASET_EXTENSIONS:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Example dataset not found.")
-
-    return candidate
-
-
-def _load_example_dataframe(path: Path) -> pd.DataFrame:
-    suffix = path.suffix.lower()
-    try:
-        if suffix == ".csv":
-            df = pd.read_csv(path)
-        elif suffix == ".parquet":
-            df = pd.read_parquet(path)
-        elif suffix == ".json":
-            df = pd.read_json(path)
-        else:
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail=f"Unsupported file format for example '{path.name}'.",
-            )
-    except HTTPException:
-        raise
-    except Exception as exc:  # noqa: BLE001
-        logger.exception("Failed to load example dataset '%s': %s", path, exc)
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Unable to load example dataset. Verify the file contents.",
-        ) from exc
-    return df
-
-
 def _huggingface_status(settings: Settings) -> HFStatus:
-    if settings.huggingface_token:
-        return HFStatus.connected
-    return HFStatus.missing_token
+    return HFStatus.connected if settings.huggingface_token else HFStatus.missing_token
 
 
 def _load_dataframe(file: UploadFile) -> pd.DataFrame:
@@ -261,6 +194,36 @@ def _to_python_scalar(value):
     return value
 
 
+def _finalize_classification_predictions(
+    probability_batches: Sequence[torch.Tensor], estimator: Any
+) -> list[Any]:
+    if not probability_batches:
+        return []
+
+    probabilities = torch.cat(probability_batches)
+    predicted_indices = probabilities.argmax(dim=-1).cpu().numpy()
+    return [estimator.classes_[index] for index in predicted_indices]
+
+
+def _finalize_regression_predictions(regression_batches: Iterable[Any]) -> list[float]:
+    flattened: list[float] = []
+    for batch in regression_batches:
+        array = np.asarray(batch)
+        if array.ndim == 0:
+            flattened.append(float(array))
+        else:
+            flattened.extend(array.reshape(-1).astype(float).tolist())
+    return flattened
+
+
+def _format_regression_predictions(predictions: Sequence[float]) -> pd.Series:
+    return (
+        pd.Series(predictions, dtype=float)
+        .round(6)
+        .map(lambda value: f"{value:.6f}".replace(".", ",") if pd.notna(value) else "")
+    )
+
+
 def _persist_result(
     X_test: pd.DataFrame,
     y_test: pd.Series,
@@ -276,8 +239,12 @@ def _persist_result(
         result_dir.mkdir(parents=True, exist_ok=True)
         file_path = result_dir / f"{run_token}.csv"
         df_out = X_test.reset_index(drop=True).copy()
-        df_out[f"{params.target_column}_actual"] = pd.Series(y_test).reset_index(drop=True)
-        df_out["prediction"] = pd.Series(predictions).reset_index(drop=True)
+        actual_series = pd.Series(y_test).reset_index(drop=True)
+        prediction_series = pd.Series(predictions).reset_index(drop=True)
+        df_out[f"{params.target_column}_actual"] = actual_series
+        df_out["prediction"] = prediction_series
+        if params.task == "regression":
+            df_out["prediction"] = _format_regression_predictions(predictions)
         df_out.to_csv(file_path, index=False)
         if source_name:
             source_stem = Path(source_name).stem or source_name
@@ -329,9 +296,8 @@ def _run_model(
     emit("Training model", 0.30, "Model fit complete")
 
     total_chunks = max(1, math.ceil(max(1, len(X_test)) / estimator.test_chunk_size))
-    predictions_list: list[Any] = []
-    probability_batches = []
-    regression_batches = []
+    probability_batches: list[torch.Tensor] = []
+    regression_batches: list[Any] = []
 
     predict_start = time.time()
     for chunk_index, start in enumerate(range(0, len(X_test), estimator.test_chunk_size), start=1):
@@ -354,18 +320,9 @@ def _run_model(
         emit("Generating predictions", 0.90, detail="No evaluation rows detected", eta=0.0)
 
     if params.task == "classification":
-        if probability_batches:
-            probs = torch.cat(probability_batches)
-            preds_idx = probs.argmax(dim=-1).numpy()
-            predictions_list = [estimator.classes_[p] for p in preds_idx]
-        else:
-            predictions_list = []
+        predictions_list = _finalize_classification_predictions(probability_batches, estimator)
     else:
-        if regression_batches:
-            preds_array = np.concatenate(regression_batches)
-            predictions_list = preds_array.tolist()
-        else:
-            predictions_list = []
+        predictions_list = _finalize_regression_predictions(regression_batches)
 
     preview_records = []
     for features, target, prediction in zip(X_test.itertuples(index=False), y_test, predictions_list):
@@ -448,31 +405,6 @@ async def preview_dataset(
     return _preview_dataframe(df)
 
 
-@router.get(
-    "/datasets/examples",
-    response_model=list[ExampleDataset],
-    summary="List datasets available in the examples directory.",
-)
-async def list_example_datasets(
-    settings: Annotated[Settings, Depends(get_settings_dependency)],
-) -> list[ExampleDataset]:
-    return _collect_examples(settings)
-
-
-@router.get(
-    "/datasets/examples/{example_id}/preview",
-    response_model=DatasetPreview,
-    summary="Preview an example dataset without uploading.",
-)
-async def preview_example_dataset(
-    example_id: str,
-    settings: Annotated[Settings, Depends(get_settings_dependency)],
-) -> DatasetPreview:
-    path = _resolve_example_path(example_id, settings)
-    df = _load_example_dataframe(path)
-    return _preview_dataframe(df)
-
-
 @router.post(
     "/run",
     response_model=RunRequest,
@@ -502,21 +434,6 @@ async def run_dataset(
     )
 
     return _schedule_run(df, params, settings, source_name)
-
-
-@router.post(
-    "/run/examples/{example_id}",
-    response_model=RunRequest,
-    summary="Kick off a model run using a dataset from the examples directory.",
-)
-async def run_example_dataset(
-    example_id: str,
-    params: RunParameters,
-    settings: Annotated[Settings, Depends(get_settings_dependency)],
-) -> RunRequest:
-    path = _resolve_example_path(example_id, settings)
-    df = _load_example_dataframe(path)
-    return _schedule_run(df, params, settings, source_name=path.name)
 
 
 @router.get(

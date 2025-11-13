@@ -27,12 +27,6 @@ export interface DatasetPreview {
   missing_values: Record<string, number>;
 }
 
-export interface ExampleDataset {
-  id: string;
-  name: string;
-  size_bytes: number;
-}
-
 export interface RunRequestResponse {
   task_id: string;
 }
@@ -55,16 +49,6 @@ export const uploadPreview = async (file: File): Promise<DatasetPreview> => {
   const { data } = await client.post("/api/datasets/preview", form, {
     headers: { "Content-Type": "multipart/form-data" }
   });
-  return data;
-};
-
-export const listExampleDatasets = async (): Promise<ExampleDataset[]> => {
-  const { data } = await client.get("/api/datasets/examples");
-  return data;
-};
-
-export const previewExampleDataset = async (exampleId: string): Promise<DatasetPreview> => {
-  const { data } = await client.get(`/api/datasets/examples/${encodeURIComponent(exampleId)}/preview`);
   return data;
 };
 
@@ -92,21 +76,6 @@ export const submitRun = async (params: RunParams): Promise<RunRequestResponse> 
   form.append("drop_constant_columns", String(params.drop_constant_columns));
   const { data } = await client.post("/api/run", form, {
     headers: { "Content-Type": "multipart/form-data" }
-  });
-  return data;
-};
-
-export const submitExampleRun = async (
-  exampleId: string,
-  params: RunParametersPayload
-): Promise<RunRequestResponse> => {
-  const { data } = await client.post(`/api/run/examples/${encodeURIComponent(exampleId)}`, {
-    task: params.task,
-    target_column: params.target_column,
-    max_context_size: params.max_context_size,
-    bagging: params.bagging,
-    test_size: params.test_size,
-    drop_constant_columns: params.drop_constant_columns
   });
   return data;
 };

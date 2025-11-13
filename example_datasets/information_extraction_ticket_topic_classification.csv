@@ -1,0 +1,501 @@
+ticket_id,channel,priority,ticket_text,topic
+TIC10000,Email,High,VPN connection drops every few minutes when working from home.,IT
+TIC10001,Chat,Urgent,There is a water leak near the kitchen on the 3rd floor.,Facilities
+TIC10002,Portal,Medium,How can I update my emergency contact information in the HR system?,HR
+TIC10003,Phone,High,There is a water leak near the kitchen on the 3rd floor.,Facilities
+TIC10004,Email,Low,Can you explain the new tax deduction on my salary?,Payroll
+TIC10005,Chat,Medium,I need confirmation of employment for a visa application.,HR
+TIC10006,Chat,High,I would like to provide feedback about the new office layout.,Other
+TIC10007,Portal,Medium,Who can I contact about corporate volunteering opportunities?,Other
+TIC10008,Portal,Low,I need access to the finance shared drive.,Access
+TIC10009,Chat,High,VPN connection drops every few minutes when working from home.,IT
+TIC10010,Chat,High,My laptop is not starting and shows a blue screen.,IT
+TIC10011,Phone,High,The air conditioning in meeting room B is not working.,Facilities
+TIC10012,Chat,High,VPN connection drops every few minutes when working from home.,IT
+TIC10013,Portal,Urgent,My badge does not open the main entrance anymore.,Access
+TIC10014,Email,Low,I have a general question about company policy.,Other
+TIC10015,Phone,Low,How can I update my emergency contact information in the HR system?,HR
+TIC10016,Phone,Low,I need confirmation of employment for a visa application.,HR
+TIC10017,Chat,Low,I have a general question about company policy.,Other
+TIC10018,Email,Medium,Can you explain the new tax deduction on my salary?,Payroll
+TIC10019,Phone,Medium,I would like to provide feedback about the new office layout.,Other
+TIC10020,Portal,Medium,How can I update my emergency contact information in the HR system?,HR
+TIC10021,Chat,Low,There is a water leak near the kitchen on the 3rd floor.,Facilities
+TIC10022,Portal,Urgent,I need access to the finance shared drive.,Access
+TIC10023,Chat,Low,I have a general question about company policy.,Other
+TIC10024,Phone,Low,Can you explain the new tax deduction on my salary?,Payroll
+TIC10025,Chat,High,There is a water leak near the kitchen on the 3rd floor.,Facilities
+TIC10026,Email,High,I would like to provide feedback about the new office layout.,Other
+TIC10027,Portal,Medium,The projector in the training room is broken.,Facilities
+TIC10028,Email,Low,I would like to provide feedback about the new office layout.,Other
+TIC10029,Portal,Medium,The air conditioning in meeting room B is not working.,Facilities
+TIC10030,Portal,Low,My laptop is not starting and shows a blue screen.,IT
+TIC10031,Chat,Low,There is a water leak near the kitchen on the 3rd floor.,Facilities
+TIC10032,Phone,Medium,VPN connection drops every few minutes when working from home.,IT
+TIC10033,Phone,Low,How can I update my emergency contact information in the HR system?,HR
+TIC10034,Email,Low,My laptop is not starting and shows a blue screen.,IT
+TIC10035,Chat,Medium,The projector in the training room is broken.,Facilities
+TIC10036,Phone,Urgent,My badge does not open the main entrance anymore.,Access
+TIC10037,Portal,Urgent,My account is locked and I cannot log into SAP.,Access
+TIC10038,Portal,Medium,I have a question about my parental leave options.,HR
+TIC10039,Chat,Low,The projector in the training room is broken.,Facilities
+TIC10040,Email,Low,VPN connection drops every few minutes when working from home.,IT
+TIC10041,Chat,Low,My account is locked and I cannot log into SAP.,Access
+TIC10042,Email,Medium,Who can I contact about corporate volunteering opportunities?,Other
+TIC10043,Chat,Medium,I did not receive my bonus payment this month.,Payroll
+TIC10044,Portal,Medium,There is a water leak near the kitchen on the 3rd floor.,Facilities
+TIC10045,Chat,Medium,I have a general question about company policy.,Other
+TIC10046,Phone,Low,I have a general question about company policy.,Other
+TIC10047,Phone,Medium,The projector in the training room is broken.,Facilities
+TIC10048,Chat,Low,Can you explain the new tax deduction on my salary?,Payroll
+TIC10049,Email,Medium,My badge does not open the main entrance anymore.,Access
+TIC10050,Email,Medium,I did not receive my bonus payment this month.,Payroll
+TIC10051,Portal,Medium,How can I update my emergency contact information in the HR system?,HR
+TIC10052,Portal,Medium,My laptop is not starting and shows a blue screen.,IT
+TIC10053,Email,Medium,Outlook keeps crashing and I cannot send emails.,IT
+TIC10054,Chat,Low,I have a general question about company policy.,Other
+TIC10055,Portal,Low,My account is locked and I cannot log into SAP.,Access
+TIC10056,Email,Medium,Can you explain the new tax deduction on my salary?,Payroll
+TIC10057,Email,Low,I would like to provide feedback about the new office layout.,Other
+TIC10058,Chat,Medium,The air conditioning in meeting room B is not working.,Facilities
+TIC10059,Phone,High,Who can I contact about corporate volunteering opportunities?,Other
+TIC10060,Email,Urgent,There is a water leak near the kitchen on the 3rd floor.,Facilities
+TIC10061,Portal,Urgent,The projector in the training room is broken.,Facilities
+TIC10062,Chat,Low,How can I update my emergency contact information in the HR system?,HR
+TIC10063,Chat,Urgent,I have a question about my parental leave options.,HR
+TIC10064,Chat,Medium,There is a water leak near the kitchen on the 3rd floor.,Facilities
+TIC10065,Phone,Medium,I need access to the finance shared drive.,Access
+TIC10066,Phone,Low,I have a question about my parental leave options.,HR
+TIC10067,Portal,High,I need confirmation of employment for a visa application.,HR
+TIC10068,Portal,Low,My laptop is not starting and shows a blue screen.,IT
+TIC10069,Chat,High,I would like to provide feedback about the new office layout.,Other
+TIC10070,Portal,Low,VPN connection drops every few minutes when working from home.,IT
+TIC10071,Email,Medium,My badge does not open the main entrance anymore.,Access
+TIC10072,Phone,Medium,I need confirmation of employment for a visa application.,HR
+TIC10073,Chat,Low,I have a question about my parental leave options.,HR
+TIC10074,Chat,Low,I did not receive my bonus payment this month.,Payroll
+TIC10075,Email,Medium,My account is locked and I cannot log into SAP.,Access
+TIC10076,Email,Low,Who can I contact about corporate volunteering opportunities?,Other
+TIC10077,Email,Medium,Who can I contact about corporate volunteering opportunities?,Other
+TIC10078,Email,Medium,I would like to provide feedback about the new office layout.,Other
+TIC10079,Chat,High,My badge does not open the main entrance anymore.,Access
+TIC10080,Phone,Medium,"My last payslip seems incorrect, overtime hours are missing.",Payroll
+TIC10081,Phone,Low,Can you explain the new tax deduction on my salary?,Payroll
+TIC10082,Email,Low,My laptop is not starting and shows a blue screen.,IT
+TIC10083,Portal,Low,My account is locked and I cannot log into SAP.,Access
+TIC10084,Chat,Urgent,My account is locked and I cannot log into SAP.,Access
+TIC10085,Phone,High,I did not receive my bonus payment this month.,Payroll
+TIC10086,Email,Low,There is a water leak near the kitchen on the 3rd floor.,Facilities
+TIC10087,Portal,Low,There is a water leak near the kitchen on the 3rd floor.,Facilities
+TIC10088,Portal,High,My laptop is not starting and shows a blue screen.,IT
+TIC10089,Email,High,The projector in the training room is broken.,Facilities
+TIC10090,Chat,High,There is a water leak near the kitchen on the 3rd floor.,Facilities
+TIC10091,Phone,High,The projector in the training room is broken.,Facilities
+TIC10092,Portal,Medium,How can I update my emergency contact information in the HR system?,HR
+TIC10093,Phone,Low,Outlook keeps crashing and I cannot send emails.,IT
+TIC10094,Phone,Medium,Can you explain the new tax deduction on my salary?,Payroll
+TIC10095,Portal,Medium,There is a water leak near the kitchen on the 3rd floor.,Facilities
+TIC10096,Email,Medium,I have a general question about company policy.,Other
+TIC10097,Portal,Medium,I need confirmation of employment for a visa application.,HR
+TIC10098,Portal,Low,There is a water leak near the kitchen on the 3rd floor.,Facilities
+TIC10099,Chat,Low,How can I update my emergency contact information in the HR system?,HR
+TIC10100,Phone,Medium,VPN connection drops every few minutes when working from home.,IT
+TIC10101,Email,Low,I would like to provide feedback about the new office layout.,Other
+TIC10102,Phone,Medium,I would like to provide feedback about the new office layout.,Other
+TIC10103,Portal,High,I have a general question about company policy.,Other
+TIC10104,Email,High,The air conditioning in meeting room B is not working.,Facilities
+TIC10105,Email,Medium,I have a question about my parental leave options.,HR
+TIC10106,Email,Medium,I would like to provide feedback about the new office layout.,Other
+TIC10107,Email,Low,My account is locked and I cannot log into SAP.,Access
+TIC10108,Chat,Medium,My account is locked and I cannot log into SAP.,Access
+TIC10109,Email,Medium,I have a question about my parental leave options.,HR
+TIC10110,Portal,Medium,The projector in the training room is broken.,Facilities
+TIC10111,Chat,High,The projector in the training room is broken.,Facilities
+TIC10112,Portal,Medium,VPN connection drops every few minutes when working from home.,IT
+TIC10113,Portal,Low,My laptop is not starting and shows a blue screen.,IT
+TIC10114,Phone,Low,I have a general question about company policy.,Other
+TIC10115,Email,Medium,I did not receive my bonus payment this month.,Payroll
+TIC10116,Email,Medium,VPN connection drops every few minutes when working from home.,IT
+TIC10117,Portal,High,There is a water leak near the kitchen on the 3rd floor.,Facilities
+TIC10118,Email,Medium,"My last payslip seems incorrect, overtime hours are missing.",Payroll
+TIC10119,Chat,Medium,My laptop is not starting and shows a blue screen.,IT
+TIC10120,Phone,Medium,I have a question about my parental leave options.,HR
+TIC10121,Email,Medium,My account is locked and I cannot log into SAP.,Access
+TIC10122,Email,Medium,VPN connection drops every few minutes when working from home.,IT
+TIC10123,Chat,Medium,Outlook keeps crashing and I cannot send emails.,IT
+TIC10124,Phone,Medium,I need confirmation of employment for a visa application.,HR
+TIC10125,Chat,Low,The air conditioning in meeting room B is not working.,Facilities
+TIC10126,Portal,High,I would like to provide feedback about the new office layout.,Other
+TIC10127,Portal,Low,I have a question about my parental leave options.,HR
+TIC10128,Email,Low,I have a general question about company policy.,Other
+TIC10129,Phone,Low,Outlook keeps crashing and I cannot send emails.,IT
+TIC10130,Portal,Low,The air conditioning in meeting room B is not working.,Facilities
+TIC10131,Chat,Medium,I did not receive my bonus payment this month.,Payroll
+TIC10132,Portal,Low,Outlook keeps crashing and I cannot send emails.,IT
+TIC10133,Portal,Low,I have a question about my parental leave options.,HR
+TIC10134,Chat,Medium,I did not receive my bonus payment this month.,Payroll
+TIC10135,Email,Medium,I need access to the finance shared drive.,Access
+TIC10136,Phone,Low,I did not receive my bonus payment this month.,Payroll
+TIC10137,Email,Medium,I have a question about my parental leave options.,HR
+TIC10138,Chat,High,I did not receive my bonus payment this month.,Payroll
+TIC10139,Portal,Urgent,How can I update my emergency contact information in the HR system?,HR
+TIC10140,Phone,Medium,My laptop is not starting and shows a blue screen.,IT
+TIC10141,Email,Low,The air conditioning in meeting room B is not working.,Facilities
+TIC10142,Chat,High,My badge does not open the main entrance anymore.,Access
+TIC10143,Portal,Medium,The projector in the training room is broken.,Facilities
+TIC10144,Portal,Low,The air conditioning in meeting room B is not working.,Facilities
+TIC10145,Email,High,There is a water leak near the kitchen on the 3rd floor.,Facilities
+TIC10146,Chat,Medium,I need confirmation of employment for a visa application.,HR
+TIC10147,Portal,Urgent,I have a question about my parental leave options.,HR
+TIC10148,Portal,High,I need access to the finance shared drive.,Access
+TIC10149,Phone,Medium,How can I update my emergency contact information in the HR system?,HR
+TIC10150,Portal,High,Who can I contact about corporate volunteering opportunities?,Other
+TIC10151,Email,Medium,I need confirmation of employment for a visa application.,HR
+TIC10152,Chat,Medium,I have a question about my parental leave options.,HR
+TIC10153,Chat,High,I have a question about my parental leave options.,HR
+TIC10154,Phone,Medium,Outlook keeps crashing and I cannot send emails.,IT
+TIC10155,Chat,High,I need access to the finance shared drive.,Access
+TIC10156,Email,High,I would like to provide feedback about the new office layout.,Other
+TIC10157,Portal,Urgent,I have a question about my parental leave options.,HR
+TIC10158,Phone,High,My badge does not open the main entrance anymore.,Access
+TIC10159,Chat,Medium,Can you explain the new tax deduction on my salary?,Payroll
+TIC10160,Phone,Low,Outlook keeps crashing and I cannot send emails.,IT
+TIC10161,Phone,High,I have a question about my parental leave options.,HR
+TIC10162,Chat,Low,Who can I contact about corporate volunteering opportunities?,Other
+TIC10163,Phone,Low,VPN connection drops every few minutes when working from home.,IT
+TIC10164,Chat,Low,I have a general question about company policy.,Other
+TIC10165,Email,High,Outlook keeps crashing and I cannot send emails.,IT
+TIC10166,Chat,High,"My last payslip seems incorrect, overtime hours are missing.",Payroll
+TIC10167,Portal,Medium,My badge does not open the main entrance anymore.,Access
+TIC10168,Chat,Medium,Outlook keeps crashing and I cannot send emails.,IT
+TIC10169,Portal,Medium,The air conditioning in meeting room B is not working.,Facilities
+TIC10170,Phone,Medium,I did not receive my bonus payment this month.,Payroll
+TIC10171,Chat,Medium,There is a water leak near the kitchen on the 3rd floor.,Facilities
+TIC10172,Portal,Low,Can you explain the new tax deduction on my salary?,Payroll
+TIC10173,Chat,Low,The projector in the training room is broken.,Facilities
+TIC10174,Chat,Medium,The air conditioning in meeting room B is not working.,Facilities
+TIC10175,Chat,Medium,Who can I contact about corporate volunteering opportunities?,Other
+TIC10176,Email,Medium,VPN connection drops every few minutes when working from home.,IT
+TIC10177,Portal,Urgent,VPN connection drops every few minutes when working from home.,IT
+TIC10178,Email,Low,I did not receive my bonus payment this month.,Payroll
+TIC10179,Email,Low,My account is locked and I cannot log into SAP.,Access
+TIC10180,Portal,Medium,I have a general question about company policy.,Other
+TIC10181,Chat,Low,VPN connection drops every few minutes when working from home.,IT
+TIC10182,Email,Low,VPN connection drops every few minutes when working from home.,IT
+TIC10183,Email,Low,I have a general question about company policy.,Other
+TIC10184,Email,Medium,How can I update my emergency contact information in the HR system?,HR
+TIC10185,Chat,Low,I have a general question about company policy.,Other
+TIC10186,Email,High,Outlook keeps crashing and I cannot send emails.,IT
+TIC10187,Phone,Medium,I need access to the finance shared drive.,Access
+TIC10188,Portal,Low,I have a question about my parental leave options.,HR
+TIC10189,Phone,High,The air conditioning in meeting room B is not working.,Facilities
+TIC10190,Chat,Low,Who can I contact about corporate volunteering opportunities?,Other
+TIC10191,Email,High,The projector in the training room is broken.,Facilities
+TIC10192,Portal,Urgent,I need confirmation of employment for a visa application.,HR
+TIC10193,Email,Low,How can I update my emergency contact information in the HR system?,HR
+TIC10194,Chat,Urgent,How can I update my emergency contact information in the HR system?,HR
+TIC10195,Portal,High,"My last payslip seems incorrect, overtime hours are missing.",Payroll
+TIC10196,Phone,Urgent,I have a general question about company policy.,Other
+TIC10197,Portal,Medium,I need access to the finance shared drive.,Access
+TIC10198,Email,Low,My account is locked and I cannot log into SAP.,Access
+TIC10199,Portal,High,There is a water leak near the kitchen on the 3rd floor.,Facilities
+TIC10200,Chat,Low,There is a water leak near the kitchen on the 3rd floor.,Facilities
+TIC10201,Chat,Low,The air conditioning in meeting room B is not working.,Facilities
+TIC10202,Portal,Low,I would like to provide feedback about the new office layout.,Other
+TIC10203,Chat,Low,VPN connection drops every few minutes when working from home.,IT
+TIC10204,Chat,Medium,The projector in the training room is broken.,Facilities
+TIC10205,Chat,High,How can I update my emergency contact information in the HR system?,HR
+TIC10206,Phone,Urgent,There is a water leak near the kitchen on the 3rd floor.,Facilities
+TIC10207,Email,Low,I need confirmation of employment for a visa application.,HR
+TIC10208,Chat,Urgent,I did not receive my bonus payment this month.,Payroll
+TIC10209,Portal,Urgent,Outlook keeps crashing and I cannot send emails.,IT
+TIC10210,Chat,Low,Outlook keeps crashing and I cannot send emails.,IT
+TIC10211,Phone,Low,I have a general question about company policy.,Other
+TIC10212,Portal,High,I have a general question about company policy.,Other
+TIC10213,Email,Medium,I need access to the finance shared drive.,Access
+TIC10214,Portal,High,Can you explain the new tax deduction on my salary?,Payroll
+TIC10215,Portal,High,I would like to provide feedback about the new office layout.,Other
+TIC10216,Portal,Medium,I need confirmation of employment for a visa application.,HR
+TIC10217,Portal,Low,I did not receive my bonus payment this month.,Payroll
+TIC10218,Chat,Medium,VPN connection drops every few minutes when working from home.,IT
+TIC10219,Email,Low,I need confirmation of employment for a visa application.,HR
+TIC10220,Chat,Medium,I did not receive my bonus payment this month.,Payroll
+TIC10221,Phone,High,VPN connection drops every few minutes when working from home.,IT
+TIC10222,Phone,Medium,Who can I contact about corporate volunteering opportunities?,Other
+TIC10223,Portal,Urgent,How can I update my emergency contact information in the HR system?,HR
+TIC10224,Chat,Medium,I need confirmation of employment for a visa application.,HR
+TIC10225,Chat,High,VPN connection drops every few minutes when working from home.,IT
+TIC10226,Email,Medium,How can I update my emergency contact information in the HR system?,HR
+TIC10227,Email,Urgent,I would like to provide feedback about the new office layout.,Other
+TIC10228,Email,High,I would like to provide feedback about the new office layout.,Other
+TIC10229,Chat,Low,Who can I contact about corporate volunteering opportunities?,Other
+TIC10230,Email,Urgent,VPN connection drops every few minutes when working from home.,IT
+TIC10231,Email,Medium,There is a water leak near the kitchen on the 3rd floor.,Facilities
+TIC10232,Email,Low,The air conditioning in meeting room B is not working.,Facilities
+TIC10233,Portal,Medium,I need confirmation of employment for a visa application.,HR
+TIC10234,Phone,High,I have a general question about company policy.,Other
+TIC10235,Phone,Medium,How can I update my emergency contact information in the HR system?,HR
+TIC10236,Chat,Low,VPN connection drops every few minutes when working from home.,IT
+TIC10237,Chat,High,I have a question about my parental leave options.,HR
+TIC10238,Portal,High,My badge does not open the main entrance anymore.,Access
+TIC10239,Phone,Medium,The projector in the training room is broken.,Facilities
+TIC10240,Email,Low,How can I update my emergency contact information in the HR system?,HR
+TIC10241,Email,Low,How can I update my emergency contact information in the HR system?,HR
+TIC10242,Chat,High,"My last payslip seems incorrect, overtime hours are missing.",Payroll
+TIC10243,Phone,High,I have a question about my parental leave options.,HR
+TIC10244,Chat,Low,My badge does not open the main entrance anymore.,Access
+TIC10245,Chat,Low,The air conditioning in meeting room B is not working.,Facilities
+TIC10246,Email,Low,"My last payslip seems incorrect, overtime hours are missing.",Payroll
+TIC10247,Email,High,My laptop is not starting and shows a blue screen.,IT
+TIC10248,Phone,Low,Outlook keeps crashing and I cannot send emails.,IT
+TIC10249,Chat,Low,There is a water leak near the kitchen on the 3rd floor.,Facilities
+TIC10250,Portal,Low,VPN connection drops every few minutes when working from home.,IT
+TIC10251,Phone,Medium,My badge does not open the main entrance anymore.,Access
+TIC10252,Chat,Medium,I need confirmation of employment for a visa application.,HR
+TIC10253,Phone,Low,The projector in the training room is broken.,Facilities
+TIC10254,Phone,Urgent,"My last payslip seems incorrect, overtime hours are missing.",Payroll
+TIC10255,Phone,Low,I have a question about my parental leave options.,HR
+TIC10256,Portal,Low,My laptop is not starting and shows a blue screen.,IT
+TIC10257,Portal,Urgent,My laptop is not starting and shows a blue screen.,IT
+TIC10258,Email,Medium,Can you explain the new tax deduction on my salary?,Payroll
+TIC10259,Email,Medium,My badge does not open the main entrance anymore.,Access
+TIC10260,Chat,Low,I did not receive my bonus payment this month.,Payroll
+TIC10261,Phone,High,There is a water leak near the kitchen on the 3rd floor.,Facilities
+TIC10262,Chat,Medium,"My last payslip seems incorrect, overtime hours are missing.",Payroll
+TIC10263,Email,High,My laptop is not starting and shows a blue screen.,IT
+TIC10264,Portal,Low,My badge does not open the main entrance anymore.,Access
+TIC10265,Email,Medium,I need access to the finance shared drive.,Access
+TIC10266,Chat,High,I would like to provide feedback about the new office layout.,Other
+TIC10267,Email,Urgent,I did not receive my bonus payment this month.,Payroll
+TIC10268,Chat,Low,The air conditioning in meeting room B is not working.,Facilities
+TIC10269,Chat,High,VPN connection drops every few minutes when working from home.,IT
+TIC10270,Chat,Low,I have a question about my parental leave options.,HR
+TIC10271,Chat,Medium,My account is locked and I cannot log into SAP.,Access
+TIC10272,Email,Low,Can you explain the new tax deduction on my salary?,Payroll
+TIC10273,Chat,Medium,I would like to provide feedback about the new office layout.,Other
+TIC10274,Chat,Low,The projector in the training room is broken.,Facilities
+TIC10275,Phone,Low,The projector in the training room is broken.,Facilities
+TIC10276,Chat,Low,My laptop is not starting and shows a blue screen.,IT
+TIC10277,Email,Low,My account is locked and I cannot log into SAP.,Access
+TIC10278,Chat,Urgent,My laptop is not starting and shows a blue screen.,IT
+TIC10279,Portal,Urgent,I would like to provide feedback about the new office layout.,Other
+TIC10280,Portal,High,How can I update my emergency contact information in the HR system?,HR
+TIC10281,Chat,Low,How can I update my emergency contact information in the HR system?,HR
+TIC10282,Portal,Medium,I need confirmation of employment for a visa application.,HR
+TIC10283,Portal,High,The projector in the training room is broken.,Facilities
+TIC10284,Email,Urgent,My account is locked and I cannot log into SAP.,Access
+TIC10285,Phone,Medium,Outlook keeps crashing and I cannot send emails.,IT
+TIC10286,Portal,High,Outlook keeps crashing and I cannot send emails.,IT
+TIC10287,Portal,Urgent,Who can I contact about corporate volunteering opportunities?,Other
+TIC10288,Phone,High,I need confirmation of employment for a visa application.,HR
+TIC10289,Phone,Low,My account is locked and I cannot log into SAP.,Access
+TIC10290,Portal,Low,I need access to the finance shared drive.,Access
+TIC10291,Chat,Medium,I have a general question about company policy.,Other
+TIC10292,Portal,Medium,I did not receive my bonus payment this month.,Payroll
+TIC10293,Chat,Low,My account is locked and I cannot log into SAP.,Access
+TIC10294,Chat,Low,My badge does not open the main entrance anymore.,Access
+TIC10295,Chat,High,Outlook keeps crashing and I cannot send emails.,IT
+TIC10296,Phone,Medium,I would like to provide feedback about the new office layout.,Other
+TIC10297,Portal,Low,My account is locked and I cannot log into SAP.,Access
+TIC10298,Portal,Medium,I need access to the finance shared drive.,Access
+TIC10299,Email,Medium,VPN connection drops every few minutes when working from home.,IT
+TIC10300,Phone,High,I need access to the finance shared drive.,Access
+TIC10301,Email,Low,VPN connection drops every few minutes when working from home.,IT
+TIC10302,Email,High,I did not receive my bonus payment this month.,Payroll
+TIC10303,Chat,Medium,The air conditioning in meeting room B is not working.,Facilities
+TIC10304,Phone,Low,VPN connection drops every few minutes when working from home.,IT
+TIC10305,Email,High,My laptop is not starting and shows a blue screen.,IT
+TIC10306,Portal,Low,My badge does not open the main entrance anymore.,Access
+TIC10307,Email,Low,Outlook keeps crashing and I cannot send emails.,IT
+TIC10308,Phone,Medium,Who can I contact about corporate volunteering opportunities?,Other
+TIC10309,Portal,Low,I need confirmation of employment for a visa application.,HR
+TIC10310,Portal,Low,I need confirmation of employment for a visa application.,HR
+TIC10311,Portal,High,"My last payslip seems incorrect, overtime hours are missing.",Payroll
+TIC10312,Chat,Low,Outlook keeps crashing and I cannot send emails.,IT
+TIC10313,Portal,Urgent,I would like to provide feedback about the new office layout.,Other
+TIC10314,Chat,Medium,My badge does not open the main entrance anymore.,Access
+TIC10315,Chat,Low,My badge does not open the main entrance anymore.,Access
+TIC10316,Email,Low,The projector in the training room is broken.,Facilities
+TIC10317,Email,Medium,"My last payslip seems incorrect, overtime hours are missing.",Payroll
+TIC10318,Portal,Medium,I have a general question about company policy.,Other
+TIC10319,Phone,Low,Who can I contact about corporate volunteering opportunities?,Other
+TIC10320,Portal,Low,My account is locked and I cannot log into SAP.,Access
+TIC10321,Email,High,The air conditioning in meeting room B is not working.,Facilities
+TIC10322,Portal,Low,My account is locked and I cannot log into SAP.,Access
+TIC10323,Email,High,The air conditioning in meeting room B is not working.,Facilities
+TIC10324,Portal,Medium,I have a question about my parental leave options.,HR
+TIC10325,Phone,Medium,I have a general question about company policy.,Other
+TIC10326,Portal,Low,I have a question about my parental leave options.,HR
+TIC10327,Phone,Low,My badge does not open the main entrance anymore.,Access
+TIC10328,Phone,High,Can you explain the new tax deduction on my salary?,Payroll
+TIC10329,Portal,Low,My laptop is not starting and shows a blue screen.,IT
+TIC10330,Phone,Low,Can you explain the new tax deduction on my salary?,Payroll
+TIC10331,Phone,Medium,"My last payslip seems incorrect, overtime hours are missing.",Payroll
+TIC10332,Email,Low,VPN connection drops every few minutes when working from home.,IT
+TIC10333,Email,Medium,I would like to provide feedback about the new office layout.,Other
+TIC10334,Phone,High,I need confirmation of employment for a visa application.,HR
+TIC10335,Chat,Medium,I have a question about my parental leave options.,HR
+TIC10336,Portal,Urgent,I have a general question about company policy.,Other
+TIC10337,Phone,High,Outlook keeps crashing and I cannot send emails.,IT
+TIC10338,Portal,Low,The projector in the training room is broken.,Facilities
+TIC10339,Email,Low,"My last payslip seems incorrect, overtime hours are missing.",Payroll
+TIC10340,Portal,Medium,My badge does not open the main entrance anymore.,Access
+TIC10341,Phone,Medium,I need confirmation of employment for a visa application.,HR
+TIC10342,Phone,Low,I have a general question about company policy.,Other
+TIC10343,Phone,Urgent,I need access to the finance shared drive.,Access
+TIC10344,Phone,Medium,Outlook keeps crashing and I cannot send emails.,IT
+TIC10345,Chat,Low,I need access to the finance shared drive.,Access
+TIC10346,Chat,Medium,My badge does not open the main entrance anymore.,Access
+TIC10347,Chat,Low,"My last payslip seems incorrect, overtime hours are missing.",Payroll
+TIC10348,Phone,High,VPN connection drops every few minutes when working from home.,IT
+TIC10349,Chat,Medium,My account is locked and I cannot log into SAP.,Access
+TIC10350,Portal,Low,How can I update my emergency contact information in the HR system?,HR
+TIC10351,Phone,Low,Outlook keeps crashing and I cannot send emails.,IT
+TIC10352,Email,High,I have a question about my parental leave options.,HR
+TIC10353,Phone,Medium,Who can I contact about corporate volunteering opportunities?,Other
+TIC10354,Portal,Urgent,I have a general question about company policy.,Other
+TIC10355,Chat,Low,There is a water leak near the kitchen on the 3rd floor.,Facilities
+TIC10356,Phone,Low,I would like to provide feedback about the new office layout.,Other
+TIC10357,Chat,Low,My account is locked and I cannot log into SAP.,Access
+TIC10358,Phone,Medium,VPN connection drops every few minutes when working from home.,IT
+TIC10359,Portal,Low,I have a general question about company policy.,Other
+TIC10360,Phone,Low,I need confirmation of employment for a visa application.,HR
+TIC10361,Chat,Medium,I need access to the finance shared drive.,Access
+TIC10362,Chat,Medium,I have a general question about company policy.,Other
+TIC10363,Portal,Low,"My last payslip seems incorrect, overtime hours are missing.",Payroll
+TIC10364,Phone,Medium,How can I update my emergency contact information in the HR system?,HR
+TIC10365,Email,High,How can I update my emergency contact information in the HR system?,HR
+TIC10366,Phone,Low,There is a water leak near the kitchen on the 3rd floor.,Facilities
+TIC10367,Portal,Low,I did not receive my bonus payment this month.,Payroll
+TIC10368,Email,Low,There is a water leak near the kitchen on the 3rd floor.,Facilities
+TIC10369,Portal,High,Who can I contact about corporate volunteering opportunities?,Other
+TIC10370,Phone,High,I did not receive my bonus payment this month.,Payroll
+TIC10371,Email,Low,I need confirmation of employment for a visa application.,HR
+TIC10372,Portal,Low,The projector in the training room is broken.,Facilities
+TIC10373,Chat,High,I need access to the finance shared drive.,Access
+TIC10374,Email,Urgent,I did not receive my bonus payment this month.,Payroll
+TIC10375,Email,Medium,I have a question about my parental leave options.,HR
+TIC10376,Portal,Urgent,Outlook keeps crashing and I cannot send emails.,IT
+TIC10377,Chat,Medium,"My last payslip seems incorrect, overtime hours are missing.",Payroll
+TIC10378,Email,High,Can you explain the new tax deduction on my salary?,Payroll
+TIC10379,Portal,Low,I have a general question about company policy.,Other
+TIC10380,Email,Medium,I need access to the finance shared drive.,Access
+TIC10381,Email,Low,I have a general question about company policy.,Other
+TIC10382,Email,High,Can you explain the new tax deduction on my salary?,Payroll
+TIC10383,Chat,Urgent,"My last payslip seems incorrect, overtime hours are missing.",Payroll
+TIC10384,Phone,Medium,My account is locked and I cannot log into SAP.,Access
+TIC10385,Phone,Low,My account is locked and I cannot log into SAP.,Access
+TIC10386,Chat,Low,The projector in the training room is broken.,Facilities
+TIC10387,Chat,Low,How can I update my emergency contact information in the HR system?,HR
+TIC10388,Portal,Low,How can I update my emergency contact information in the HR system?,HR
+TIC10389,Email,Medium,The projector in the training room is broken.,Facilities
+TIC10390,Chat,Urgent,I need confirmation of employment for a visa application.,HR
+TIC10391,Portal,Low,"My last payslip seems incorrect, overtime hours are missing.",Payroll
+TIC10392,Phone,Low,The projector in the training room is broken.,Facilities
+TIC10393,Phone,Medium,The air conditioning in meeting room B is not working.,Facilities
+TIC10394,Phone,Low,How can I update my emergency contact information in the HR system?,HR
+TIC10395,Phone,High,My laptop is not starting and shows a blue screen.,IT
+TIC10396,Portal,Low,I need confirmation of employment for a visa application.,HR
+TIC10397,Email,Low,I have a general question about company policy.,Other
+TIC10398,Portal,Low,VPN connection drops every few minutes when working from home.,IT
+TIC10399,Email,Low,There is a water leak near the kitchen on the 3rd floor.,Facilities
+TIC10400,Phone,Medium,My laptop is not starting and shows a blue screen.,IT
+TIC10401,Chat,Low,Can you explain the new tax deduction on my salary?,Payroll
+TIC10402,Chat,Medium,I need access to the finance shared drive.,Access
+TIC10403,Chat,Medium,My laptop is not starting and shows a blue screen.,IT
+TIC10404,Email,Low,I have a general question about company policy.,Other
+TIC10405,Phone,Low,I need access to the finance shared drive.,Access
+TIC10406,Portal,Medium,Can you explain the new tax deduction on my salary?,Payroll
+TIC10407,Chat,Medium,I have a general question about company policy.,Other
+TIC10408,Email,Urgent,My badge does not open the main entrance anymore.,Access
+TIC10409,Chat,Low,I did not receive my bonus payment this month.,Payroll
+TIC10410,Portal,Low,My account is locked and I cannot log into SAP.,Access
+TIC10411,Phone,Low,My account is locked and I cannot log into SAP.,Access
+TIC10412,Portal,Medium,I have a question about my parental leave options.,HR
+TIC10413,Phone,Medium,Who can I contact about corporate volunteering opportunities?,Other
+TIC10414,Phone,High,Who can I contact about corporate volunteering opportunities?,Other
+TIC10415,Phone,Medium,VPN connection drops every few minutes when working from home.,IT
+TIC10416,Chat,Low,I have a general question about company policy.,Other
+TIC10417,Portal,Medium,I have a general question about company policy.,Other
+TIC10418,Chat,Urgent,I need access to the finance shared drive.,Access
+TIC10419,Portal,Low,The air conditioning in meeting room B is not working.,Facilities
+TIC10420,Email,Medium,I have a question about my parental leave options.,HR
+TIC10421,Email,Urgent,My laptop is not starting and shows a blue screen.,IT
+TIC10422,Portal,High,I need confirmation of employment for a visa application.,HR
+TIC10423,Portal,High,VPN connection drops every few minutes when working from home.,IT
+TIC10424,Portal,Low,Can you explain the new tax deduction on my salary?,Payroll
+TIC10425,Portal,Medium,My badge does not open the main entrance anymore.,Access
+TIC10426,Phone,Low,Who can I contact about corporate volunteering opportunities?,Other
+TIC10427,Chat,Medium,I would like to provide feedback about the new office layout.,Other
+TIC10428,Phone,Low,The air conditioning in meeting room B is not working.,Facilities
+TIC10429,Chat,High,I have a question about my parental leave options.,HR
+TIC10430,Chat,High,I need confirmation of employment for a visa application.,HR
+TIC10431,Chat,Medium,How can I update my emergency contact information in the HR system?,HR
+TIC10432,Phone,Low,I would like to provide feedback about the new office layout.,Other
+TIC10433,Portal,Low,I need confirmation of employment for a visa application.,HR
+TIC10434,Phone,High,My account is locked and I cannot log into SAP.,Access
+TIC10435,Phone,Medium,My laptop is not starting and shows a blue screen.,IT
+TIC10436,Chat,High,Who can I contact about corporate volunteering opportunities?,Other
+TIC10437,Email,Low,I need access to the finance shared drive.,Access
+TIC10438,Email,Medium,"My last payslip seems incorrect, overtime hours are missing.",Payroll
+TIC10439,Phone,High,My account is locked and I cannot log into SAP.,Access
+TIC10440,Chat,Medium,My account is locked and I cannot log into SAP.,Access
+TIC10441,Phone,Medium,"My last payslip seems incorrect, overtime hours are missing.",Payroll
+TIC10442,Phone,High,My badge does not open the main entrance anymore.,Access
+TIC10443,Portal,Low,My laptop is not starting and shows a blue screen.,IT
+TIC10444,Chat,Low,I would like to provide feedback about the new office layout.,Other
+TIC10445,Email,Medium,The projector in the training room is broken.,Facilities
+TIC10446,Email,Low,I did not receive my bonus payment this month.,Payroll
+TIC10447,Email,High,Who can I contact about corporate volunteering opportunities?,Other
+TIC10448,Phone,High,I have a question about my parental leave options.,HR
+TIC10449,Chat,High,VPN connection drops every few minutes when working from home.,IT
+TIC10450,Portal,Medium,The projector in the training room is broken.,Facilities
+TIC10451,Email,Low,My laptop is not starting and shows a blue screen.,IT
+TIC10452,Chat,Low,Outlook keeps crashing and I cannot send emails.,IT
+TIC10453,Email,High,I need confirmation of employment for a visa application.,HR
+TIC10454,Portal,Low,There is a water leak near the kitchen on the 3rd floor.,Facilities
+TIC10455,Chat,Medium,Outlook keeps crashing and I cannot send emails.,IT
+TIC10456,Phone,High,How can I update my emergency contact information in the HR system?,HR
+TIC10457,Phone,Low,"My last payslip seems incorrect, overtime hours are missing.",Payroll
+TIC10458,Email,Low,How can I update my emergency contact information in the HR system?,HR
+TIC10459,Email,Medium,My account is locked and I cannot log into SAP.,Access
+TIC10460,Chat,High,Who can I contact about corporate volunteering opportunities?,Other
+TIC10461,Portal,Low,How can I update my emergency contact information in the HR system?,HR
+TIC10462,Email,Urgent,I need confirmation of employment for a visa application.,HR
+TIC10463,Chat,Medium,I need confirmation of employment for a visa application.,HR
+TIC10464,Portal,Urgent,Outlook keeps crashing and I cannot send emails.,IT
+TIC10465,Email,Low,The air conditioning in meeting room B is not working.,Facilities
+TIC10466,Email,Low,I have a question about my parental leave options.,HR
+TIC10467,Chat,High,How can I update my emergency contact information in the HR system?,HR
+TIC10468,Email,High,I need access to the finance shared drive.,Access
+TIC10469,Phone,Medium,My badge does not open the main entrance anymore.,Access
+TIC10470,Portal,High,"My last payslip seems incorrect, overtime hours are missing.",Payroll
+TIC10471,Portal,High,Can you explain the new tax deduction on my salary?,Payroll
+TIC10472,Phone,Low,I need access to the finance shared drive.,Access
+TIC10473,Chat,Medium,There is a water leak near the kitchen on the 3rd floor.,Facilities
+TIC10474,Phone,High,I did not receive my bonus payment this month.,Payroll
+TIC10475,Phone,Low,Who can I contact about corporate volunteering opportunities?,Other
+TIC10476,Portal,Low,I would like to provide feedback about the new office layout.,Other
+TIC10477,Chat,High,The projector in the training room is broken.,Facilities
+TIC10478,Email,Low,My account is locked and I cannot log into SAP.,Access
+TIC10479,Phone,Low,Can you explain the new tax deduction on my salary?,Payroll
+TIC10480,Phone,Urgent,I have a question about my parental leave options.,HR
+TIC10481,Chat,Medium,My badge does not open the main entrance anymore.,Access
+TIC10482,Phone,High,I did not receive my bonus payment this month.,Payroll
+TIC10483,Chat,High,The projector in the training room is broken.,Facilities
+TIC10484,Email,Low,Who can I contact about corporate volunteering opportunities?,Other
+TIC10485,Chat,Low,There is a water leak near the kitchen on the 3rd floor.,Facilities
+TIC10486,Email,Low,"My last payslip seems incorrect, overtime hours are missing.",Payroll
+TIC10487,Chat,Low,The air conditioning in meeting room B is not working.,Facilities
+TIC10488,Phone,Medium,Can you explain the new tax deduction on my salary?,Payroll
+TIC10489,Email,Medium,"My last payslip seems incorrect, overtime hours are missing.",Payroll
+TIC10490,Phone,Medium,There is a water leak near the kitchen on the 3rd floor.,Facilities
+TIC10491,Email,Low,My laptop is not starting and shows a blue screen.,IT
+TIC10492,Chat,Low,I have a question about my parental leave options.,HR
+TIC10493,Chat,Medium,My badge does not open the main entrance anymore.,Access
+TIC10494,Chat,Medium,I would like to provide feedback about the new office layout.,Other
+TIC10495,Portal,Low,I have a question about my parental leave options.,HR
+TIC10496,Portal,Medium,My account is locked and I cannot log into SAP.,Access
+TIC10497,Email,Low,My account is locked and I cannot log into SAP.,Access
+TIC10498,Portal,Low,I would like to provide feedback about the new office layout.,Other
+TIC10499,Chat,High,I need confirmation of employment for a visa application.,HR

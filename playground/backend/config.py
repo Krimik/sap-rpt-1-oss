@@ -24,7 +24,6 @@ class Settings:
     log_level: str
     zmq_port: int
     max_upload_mb: int
-    examples_dir: Path
 
 
 def _coerce_path(value: Optional[str], *, default: Path) -> Path:
@@ -49,8 +48,6 @@ def get_settings() -> Settings:
     backend_root = Path(__file__).resolve().parent
     project_root = backend_root.parent.parent
     cache_dir = _coerce_path(os.getenv("PLAYGROUND_CACHE_DIR"), default=project_root / ".cache")
-    examples_default = project_root / "example_datasets"
-    examples_dir = _coerce_path(os.getenv("PLAYGROUND_EXAMPLES_DIR"), default=examples_default)
     log_level = os.getenv("PLAYGROUND_LOG_LEVEL", "INFO").upper()
     zmq_port = _coerce_int(os.getenv("PLAYGROUND_ZMQ_PORT"), default=5655)
     max_upload_mb = _coerce_int(os.getenv("PLAYGROUND_MAX_UPLOAD_MB"), default=50)
@@ -61,7 +58,6 @@ def get_settings() -> Settings:
         log_level=log_level,
         zmq_port=zmq_port,
         max_upload_mb=max_upload_mb,
-        examples_dir=examples_dir,
     )
 
 

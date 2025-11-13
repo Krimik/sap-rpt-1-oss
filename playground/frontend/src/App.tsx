@@ -3,15 +3,11 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 
 import {
   DatasetPreview as DatasetPreviewType,
-  ExampleDataset,
   HealthResponse,
   RunParametersPayload,
   RunResult,
   fetchHealth,
   fetchRunResult,
-  listExampleDatasets,
-  previewExampleDataset,
-  submitExampleRun,
   submitRun,
   uploadPreview
 } from "./api";
@@ -45,7 +41,6 @@ const resolveWsUrl = (path: string): string => {
 
 const App = () => {
   const [selectedFile, setSelectedFile] = useState<File>();
-  const [selectedExampleId, setSelectedExampleId] = useState<string>();
   const [preview, setPreview] = useState<DatasetPreviewType>();
   const [task, setTask] = useState<TaskType>("classification");
   const [targetColumn, setTargetColumn] = useState<string>();
@@ -63,12 +58,6 @@ const App = () => {
     queryKey: ["health"],
     queryFn: fetchHealth,
     refetchInterval: 30000
-  });
-
-  const examplesQuery = useQuery<ExampleDataset[], Error>({
-    queryKey: ["example-datasets"],
-    queryFn: listExampleDatasets,
-    staleTime: 60_000
   });
 
   const pushEvent = useCallback((message: string, tone: ActivityEvent["tone"]) => {
@@ -92,7 +81,8 @@ const App = () => {
     mutationFn: uploadPreview,
     onSuccess: (data) => {
       setPreview(data);
-      setTargetColumn(data.columns[0]);
+      const defaultTarget = data.columns.length > 0 ? data.columns[data.columns.length - 1] : undefined;
+      setTargetColumn(defaultTarget);
       setRunError(undefined);
     },
     onError: (error: Error) => {
@@ -102,33 +92,14 @@ const App = () => {
     }
   });
 
-  const previewExampleMutation = useMutation({
-    mutationFn: previewExampleDataset,
-    onSuccess: (data) => {
-      setPreview(data);
-      setTargetColumn(data.columns[0]);
-      setRunError(undefined);
-    },
-    onError: (error: Error) => {
-      setPreview(undefined);
-      setTargetColumn(undefined);
-      setRunError(error.message);
-    }
-  });
-
-  type RunSubmission =
-    | { type: "upload"; file: File; params: RunParametersPayload }
-    | { type: "example"; exampleId: string; params: RunParametersPayload };
+  type RunSubmission = { file: File; params: RunParametersPayload };
 
   const runMutation = useMutation({
     mutationFn: async (payload: RunSubmission) => {
-      if (payload.type === "upload") {
-        return submitRun({
-          file: payload.file,
-          ...payload.params
-        });
-      }
-      return submitExampleRun(payload.exampleId, payload.params);
+      return submitRun({
+        file: payload.file,
+        ...payload.params
+      });
     },
     onSuccess: ({ task_id }) => {
       setRunResult(undefined);
@@ -209,22 +180,20 @@ const App = () => {
     };
   }, [currentTaskId, pushEvent]);
 
-  const examples = examplesQuery.data ?? [];
-  const selectedExample = useMemo(
-    () => examples.find((example) => example.id === selectedExampleId),
-    [examples, selectedExampleId]
-  );
-
   const handleFileSelected = (file: File) => {
     previewFileMutation.reset();
     setSelectedFile(file);
-    setSelectedExampleId(undefined);
-    previewExampleMutation.reset();
     setPreview(undefined);
     setRunResult(undefined);
     setRunError(undefined);
     setRunProgress(undefined);
     setTargetColumn(undefined);
+    const name = file.name.toLowerCase();
+    if (name.includes("classification")) {
+      setTask("classification");
+    } else if (name.includes("regression")) {
+      setTask("regression");
+    }
     setEvents([
       {
         timestamp: new Date().toISOString(),
@@ -233,46 +202,6 @@ const App = () => {
       }
     ]);
     previewFileMutation.mutate(file);
-  };
-
-  const handleExampleSelected = (exampleId?: string) => {
-    previewExampleMutation.reset();
-    if (!exampleId) {
-      setSelectedExampleId(undefined);
-      setSelectedFile(undefined);
-      previewExampleMutation.reset();
-      setPreview(undefined);
-      setTargetColumn(undefined);
-      setRunResult(undefined);
-      setRunError(undefined);
-      setRunProgress(undefined);
-      setEvents([
-        {
-          timestamp: new Date().toISOString(),
-          message: "Cleared example selection. Choose a dataset or upload your own.",
-          tone: "info"
-        }
-      ]);
-      return;
-    }
-
-    const example = examples.find((item) => item.id === exampleId);
-    setSelectedExampleId(exampleId);
-    setSelectedFile(undefined);
-    previewFileMutation.reset();
-    setPreview(undefined);
-    setRunResult(undefined);
-    setRunError(undefined);
-    setRunProgress(undefined);
-    setTargetColumn(undefined);
-    setEvents([
-      {
-        timestamp: new Date().toISOString(),
-        message: `Selected example dataset: ${example?.name ?? exampleId}`,
-        tone: "info"
-      }
-    ]);
-    previewExampleMutation.mutate(exampleId);
   };
 
   const handleRun = () => {
@@ -287,22 +216,15 @@ const App = () => {
       drop_constant_columns: dropConstantColumns
     };
 
-    if (selectedExampleId) {
-      const exampleName = selectedExample?.name ?? selectedExampleId;
-      pushEvent(`Submitting ${task} job for example ${exampleName}...`, "info");
-      runMutation.mutate({ type: "example", exampleId: selectedExampleId, params });
-      return;
-    }
-
     if (selectedFile) {
       pushEvent(`Submitting ${task} job for ${selectedFile.name}...`, "info");
-      runMutation.mutate({ type: "upload", file: selectedFile, params });
+      runMutation.mutate({ file: selectedFile, params });
     }
   };
 
   const availableColumns = useMemo(() => preview?.columns ?? [], [preview]);
   const isRunning = runMutation.isPending || Boolean(currentTaskId);
-  const previewError = previewFileMutation.error?.message ?? previewExampleMutation.error?.message;
+  const previewError = previewFileMutation.error?.message;
 
   return (
     <main className="mx-auto flex max-w-6xl flex-col gap-6 p-6">
@@ -316,12 +238,8 @@ const App = () => {
         <div className="lg:col-span-2 space-y-6">
           <DatasetPanel
             onFileSelected={handleFileSelected}
-            onExampleSelected={handleExampleSelected}
             preview={preview}
-            examples={examples}
-            selectedExampleId={selectedExampleId}
             isLoading={previewFileMutation.isPending}
-            isExampleLoading={previewExampleMutation.isPending}
             error={previewError}
             selectedFile={selectedFile}
           />

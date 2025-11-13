@@ -1,27 +1,19 @@
 import { ChangeEvent } from "react";
 
-import { DatasetPreview, ExampleDataset } from "../api";
+import { DatasetPreview } from "../api";
 
 interface DatasetPanelProps {
   onFileSelected: (file: File) => void;
-  onExampleSelected?: (exampleId?: string) => void;
   preview?: DatasetPreview;
-  examples?: ExampleDataset[];
-  selectedExampleId?: string;
   isLoading: boolean;
-  isExampleLoading?: boolean;
   error?: string;
   selectedFile?: File;
 }
 
 export const DatasetPanel = ({
   onFileSelected,
-  onExampleSelected,
   preview,
-  examples,
-  selectedExampleId,
   isLoading,
-  isExampleLoading,
   error,
   selectedFile
 }: DatasetPanelProps) => {
@@ -30,43 +22,17 @@ export const DatasetPanel = ({
     if (file) onFileSelected(file);
   };
 
-  const handleExampleChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    const value = event.target.value || undefined;
-    onExampleSelected?.(value);
-  };
-
-  const selectedExample = examples?.find((example) => example.id === selectedExampleId);
-  const statusMessage = selectedExample
-    ? `Using example dataset: ${selectedExample.name}`
-    : selectedFile
-      ? `Selected file: ${selectedFile.name}`
-      : undefined;
-  const showAnalyzing = isLoading || Boolean(isExampleLoading);
+  const statusMessage = selectedFile ? `Selected file: ${selectedFile.name}` : undefined;
+  const showAnalyzing = isLoading;
 
   return (
     <section className="rounded-lg border border-slate-800 bg-slate-900/60 p-4 shadow-lg">
       <header className="flex flex-wrap items-center justify-between gap-3">
         <h2 className="text-lg font-semibold text-slate-100">Dataset</h2>
-        <div className="flex flex-wrap items-center gap-2">
-          {examples && examples.length > 0 && (
-            <select
-              value={selectedExampleId ?? ""}
-              onChange={handleExampleChange}
-              className="rounded border border-slate-800 bg-slate-950 px-3 py-2 text-sm text-slate-100 focus:border-primary-500 focus:outline-none"
-            >
-              <option value="">Choose example dataset...</option>
-              {examples.map((example) => (
-                <option key={example.id} value={example.id}>
-                  {example.name}
-                </option>
-              ))}
-            </select>
-          )}
-          <label className="cursor-pointer rounded bg-primary-600 px-4 py-2 text-sm font-medium text-white hover:bg-primary-500 focus:outline-none">
-            {selectedFile ? "Change File" : "Upload CSV"}
-            <input type="file" accept=".csv,.parquet,.json" className="hidden" onChange={handleChange} />
-          </label>
-        </div>
+        <label className="cursor-pointer rounded bg-primary-600 px-4 py-2 text-sm font-medium text-white hover:bg-primary-500 focus:outline-none">
+          {selectedFile ? "Change File" : "Upload CSV"}
+          <input type="file" accept=".csv,.parquet,.json" className="hidden" onChange={handleChange} />
+        </label>
       </header>
       {statusMessage && (
         <p className="mt-2 text-sm text-slate-400">

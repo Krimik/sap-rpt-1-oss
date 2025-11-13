@@ -31,7 +31,7 @@ export const ActivityTimeline = ({ events }: ActivityTimelineProps) => {
               }`}
             >
               <p className="font-mono text-slate-400">{new Date(event.timestamp).toLocaleTimeString()}</p>
-              <p className="text-slate-200">{event.message}</p>
+              <p className="text-slate-200 break-words">{event.message}</p>
             </li>
           ))}
         </ul>

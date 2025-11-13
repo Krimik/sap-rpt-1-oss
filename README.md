@@ -46,14 +46,35 @@ Interactive playground for the `SAP/sap-rpt-1-oss` tabular in-context learner. T
 
 ## Working with Datasets
 
-- Upload CSV, Parquet, or JSON files directly from the Dataset panel, or place files in the `example_datasets/` directory and they will be listed automatically.
-- When a run finishes, download the scored test split from the Results dashboard. Filenames follow the pattern `<dataset_name> - results.csv`.
-- Adjust task type, target column, test split, maximum context size, bagging factor, and preprocessing options in the Configuration panel before starting a job.
+- Upload CSV, Parquet, or JSON files directly from the Dataset panel. Sample datasets live under `example_datasets/`, but you still pick the files manually in the UI.
+- The preview auto-selects the last column as the initial target. If the filename contains `classification` or `regression`, the task type pre-fills accordingly (you can still change it).
+- When a run finishes, download the scored test split from the Results dashboard. Filenames follow `<dataset_name> - results.csv`; regression predictions are formatted with a comma decimal separator to simplify spreadsheet viewing.
+- Tune task type, target column, test split, maximum context size, bagging factor, and preprocessing options in the Configuration panel before starting a job.
+
+### Included Example Datasets
+
+Each CSV in `example_datasets/` demonstrates a different SAP RPT scenario you can load manually through the Dataset panel:
+
+- **Predictive business outcomes**
+  - `predictive_business_outcomes_iInvoice Late_classification.csv`: Will this invoice be paid late? → `late_payment_flag` (classification)
+  - `predictive_business_outcomes_days_to_payment_regression.csv`: How many days until payment? → `days_to_pay` (regression)
+- **Recommendations & auto-defaulting**
+  - `recommendations_form_of_address_classification.csv`: Recommend `form_of_address` for PA0002 (classification)
+- **Normalization & coding**
+  - `normalization_raw_country_country_iso_code_classification.csv`: Normalize `raw_country` → `country_iso_code` PA0006 (classification)
+- **Data quality & anomaly flags**
+  - `data_quality_bank_details_needs_review_classification.csv`: Classify `needs_review` (0/1) for bank details PA0009 (classification)
+- **Derived scores, segments & priorities**
+  - `derived_scores_risk_of_leave_regression.csv`: Set risk score `risk_of_leave` for an employee (regression)
+- **Matching & linking via pair-rows**
+  - `matching_materials_is_same_entity_classification.csv`: Two materials → `is_same_entity` (0/1) (classification)
+- **Information extraction from text**
+  - `information_extraction_ticket_topic_classification.csv`: From `ticket_text` → `topic` (classification)
 
 ## Backend & Services
 
-- FastAPI exposes REST endpoints for health checks, dataset upload, example dataset management, and job execution, plus WebSockets for real-time progress streaming.
-- Job orchestration dispatches inference tasks asynchronously and persists results for later download.
+- FastAPI exposes REST endpoints for health checks, dataset preview/upload, and job execution, plus WebSockets for real-time progress streaming.
+- Job orchestration dispatches inference tasks asynchronously, surfaces granular progress updates, and persists results for later download.
 - Hugging Face authentication is required to download the checkpoint once; subsequent runs reuse the cached copy.
 - The ZeroMQ embedding server is launched and managed automatically when the estimator starts.
 
@@ -69,4 +90,3 @@ Interactive playground for the `SAP/sap-rpt-1-oss` tabular in-context learner. T
 - The repo is structured under `playground/backend` and `playground/frontend`. Edit React components or FastAPI routes there as needed.
 - Keep personal filesystem paths out of documentation and configuration. Use project-relative paths (e.g., `./example_datasets`) when sharing setup steps.
 
-Happy experimenting! Send feedback or open issues on GitHub if you run into problems.
