@@ -20,6 +20,7 @@ playground/frontend/.vite/
 # Build artifacts
 dist/
 playground/frontend/dist/
+.DS_Store
 
 # External dependencies
 sap-rpt-1-oss/
